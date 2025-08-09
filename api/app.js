@@ -1,7 +1,4 @@
 const express = require("express");
-const serverless = require("serverless-http");
-require("dotenv").config();
-
 const app = express();
 
 app.post("/", (req, res) => {
@@ -14,5 +11,6 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-module.exports = app;
-module.exports.handler = serverless(app);
+app.listen(10000, () => {
+  console.log("Server running on port 10000");
+});
